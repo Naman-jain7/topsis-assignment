@@ -58,15 +58,15 @@ def topsis(df, weights, impacts):
     data = df.iloc[:,1:].values.astype(float)
     norm = np.sqrt((data**2).sum(axis=0))
     normalized = data/norm
-    weights = normalized*weights
+    weighted = normalized*weights
 
     ideal_best=[]
     ideal_worst=[]
 
-    for i in range(len(weights)):
+    for i in range(weighted.shape[1]):
         if impacts[i]=='+':
             ideal_best.append(np.max(weighted[:,i]))
-            ideal_worst.append(np.max(weighted[:,i]))
+            ideal_worst.append(np.min(weighted[:,i]))
         else:
             ideal_best.append(np.min(weighted[:, i]))
             ideal_worst.append(np.max(weighted[:, i]))
@@ -80,7 +80,7 @@ def topsis(df, weights, impacts):
     score = dist_worst / (dist_best + dist_worst)
 
     df["Topsis Score"] = score
-    df["Rank"] = df["Topsis Score"].rank(method="max", ascending=False)
+    df["Rank"] = df["Topsis Score"].rank(method="max", ascending=False).astype(int)
     return df
 
 def main():

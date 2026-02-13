@@ -5,7 +5,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 setup(
     name="topsis-naman-102316108",
-    version="0.0.2",
+    version="0.0.3",
     author="Naman",
     author_email="njain_be23@thapar.edu",
     description="TOPSIS implementation as a command line tool",
