@@ -1,1 +1,6 @@
 assignment-README.md
+build/
+dist/
+topsis_naman_102316108.egg-info/
+topsis_naman_102316108.egg-info/*
+dist/topsis_naman_102316108-0.0.2-py3-none-any.whl
