@@ -64,7 +64,7 @@ def send_email(receiver_email, file_path):
         server.login(sender_email, app_password)
         server.send_message(msg)
 
-st.title('TOPSIS Method')
+st.title('TOPSIS')
 
 uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
 weights_input = st.text_input("Weights (comma separated)", "1,1,1,1")
